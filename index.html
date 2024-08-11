@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa Especial</title>
+    <style>
+        body {
+            background-color: #fce4ec;
+            color: #880e4f;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #d81b60;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ad1457;
+        }
+
+        #revealMessage, #finalMessage, #photos {
+            display: none;
+            margin-top: 30px;
+        }
+
+        #finalMessage {
+            font-size: 1.8em;
+            color: #4a148c;
+        }
+
+        .photos-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .photos-container img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .options {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+
+        .options label {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Luma Final</h1>
+    <p>Tenho algo muito especial para te dizer...</p>
+    <button onclick="revealMessage()">Clique aqui para descobrir</button>
+
+    <div id="revealMessage">
+        <p>Gostaria de saber se você quer transformar nossa conexão em algo mais sério. Só nós dois, juntos nessa jornada. 💖</p>
+        
+        <div class="options">
+            <label><input type="radio" name="response" onclick="showResponse('sim')"> Sim</label>
+            <label><input type="radio" name="response" onclick="showResponse('nao')"> Não</label>
+        </div>
+    </div>
+
+    <div id="finalMessage">
+        <p>Que ótimo! Estou muito feliz por isso. Vamos criar muitos momentos juntos!</p>
+    </div>
+
+    <div id="photos" class="photos-container">
+        <img src="./img/img1.jpeg" alt="Foto Romântica 1">
+        <img src="./img/img2.jpeg" alt="Foto Romântica 2">
+        <img src="./img/img3.jpeg" alt="Foto Romântica 2">
+    </div>
+
+    <script>
+        function revealMessage() {
+            document.getElementById('revealMessage').style.display = 'block';
+        }
+
+        function showResponse(response) {
+            if (response === 'sim') {
+                location.href = "./photos.html"
+            } else {
+                document.getElementById('finalMessage').style.display = 'none';
+                document.getElementById('photos').style.display = 'none';
+            }
+        }
+        function sim() {
+          location.href = "https://music.youtube.com/watch?v=6UQHIQpBw6w&list=RDAMVMIgXTwSOuH4Y"
+        }
+    </script>
+</body>
+</html>
